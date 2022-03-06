@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F97DE769-3709-4549-A905-AFA2826DD3E3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Rent_Buy_Car_Project</RootNamespace>
+    <AssemblyName>Rent_Buy_Car_Project</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.3.1, Culture=neutral, PublicKeyToken=e4b9cdd7b4cde4b4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.3.1\lib\net40\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="LogInPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInPageForm.Designer.cs">
+      <DependentUpon>LogInPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RentACarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RentACarForm.Designer.cs">
+      <DependentUpon>RentACarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VehiclesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VehiclesForm.Designer.cs">
+      <DependentUpon>VehiclesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SignInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignInForm.Designer.cs">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StartUpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StartUpForm.Designer.cs">
+      <DependentUpon>StartUpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="LogInPageForm.resx">
+      <DependentUpon>LogInPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RentACarForm.resx">
+      <DependentUpon>RentACarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VehiclesForm.resx">
+      <DependentUpon>VehiclesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignInForm.resx">
+      <DependentUpon>SignInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartUpForm.resx">
+      <DependentUpon>StartUpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginPageBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginPageBackground1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginPageBackground2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LoginPageBackground3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_24px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\person_24px2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lock_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_key_image%281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key_car_image%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_key%283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_key%284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\filterIcon%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a7Main%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a7Main%282%291.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kisspng-audi-sportbA7MAIN 3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a7Front.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a6Front.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a5Front.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q7Font.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garageBackground.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q7try.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a6Try.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\a5Try.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\q3Try.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage%282%29.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
