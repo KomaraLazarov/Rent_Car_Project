@@ -10,18 +10,16 @@ using System.Windows.Forms;
 
 namespace Rent_Buy_Car_Project
 {
-    public partial class RentACarForm : Form
+    public partial class HomePageForm : Form
     {
-        public RentACarForm()
+        public HomePageForm()
         {
             InitializeComponent();
-            btnRentACar.Visible = true;
-            mainPanel.Visible = true;
         }
 
-        private void btnMakeAReservation_Click(object sender, EventArgs e)
+        private void HomePageForm_Load(object sender, EventArgs e)
         {
-            // If car is already rented-- Show correct message
+
         }
     }
 }

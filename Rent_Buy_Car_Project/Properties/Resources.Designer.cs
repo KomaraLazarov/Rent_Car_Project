@@ -323,6 +323,16 @@ namespace Rent_Buy_Car_Project.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ProjectBackground1 {
+            get {
+                object obj = ResourceManager.GetObject("ProjectBackground1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap q3Try {
             get {
                 object obj = ResourceManager.GetObject("q3Try", resourceCulture);

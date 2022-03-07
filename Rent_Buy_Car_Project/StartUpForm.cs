@@ -15,14 +15,7 @@ namespace Rent_Buy_Car_Project
         public StartUpForm()
         {
             InitializeComponent();
-
-            //mainPanel.Show();
-            //btnOpenLoginPage_2.Show();
-            //this.btnOpenSignInPage.Show();
-
-            //this.btnOpenLoginPage_2.BackColor = Color.FromArgb(225, 195, 4);
-            //this.btnOpenSignInPage.BackColor = Color.White;
-            //this.LoadForm(new LogInForm());
+            this.LoadForm(new HomePageForm());
         }
 
         private void LoadForm(object form)
@@ -71,6 +64,16 @@ namespace Rent_Buy_Car_Project
         private void btnWhatsUp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://www.whatsapp.com/");
+        }
+
+        private void btnOpenAboutPage_Click(object sender, EventArgs e)
+        {
+            this.LoadForm(new AboutPageForm());
+        }
+
+        private void btnOpenHomePage_Click(object sender, EventArgs e)
+        {
+            this.LoadForm(new HomePageForm());
         }
     }
 }

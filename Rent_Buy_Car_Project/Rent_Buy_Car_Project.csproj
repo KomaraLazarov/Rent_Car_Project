@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutPageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutPageForm.Designer.cs">
+      <DependentUpon>AboutPageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomePageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomePageForm.Designer.cs">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogInPageForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutPageForm.resx">
+      <DependentUpon>AboutPageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomePageForm.resx">
+      <DependentUpon>HomePageForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LogInPageForm.resx">
       <DependentUpon>LogInPageForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +233,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\garage%282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProjectBackground1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
