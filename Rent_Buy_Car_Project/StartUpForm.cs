@@ -12,10 +12,18 @@ namespace Rent_Buy_Car_Project
 {
     public partial class StartUpForm : Form
     {
+        public static StartUpForm startUpFormInstance;
+        public Button buttonRentCar;
+        public Button buttonVehicles;
         public StartUpForm()
         {
             InitializeComponent();
             this.LoadForm(new HomePageForm());
+            this.btnOpenRentACarPage.Visible = false;
+            this.btnOpenVehiclesPage.Visible = false;
+            startUpFormInstance = this;
+            buttonRentCar = btnOpenRentACarPage;
+            buttonVehicles = btnOpenVehiclesPage;
         }
 
         private void LoadForm(object form)

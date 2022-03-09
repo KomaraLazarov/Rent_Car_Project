@@ -15,6 +15,10 @@ namespace Data.Models
             this.PhoneNumber = phoneNumber;
             this.Birthdate = birthDate;
         }
+        public User()
+        {
+
+        }
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }

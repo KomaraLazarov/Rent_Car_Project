@@ -14,12 +14,10 @@ namespace Rent_Buy_Car_Project
     public partial class LogInForm : Form
     {
         private RentACarBusiness rentACarBusiness = new RentACarBusiness();
-
         public LogInForm()
         {
             InitializeComponent();
         }
-
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
             // Check if username and passwords are valid
@@ -38,6 +36,8 @@ namespace Rent_Buy_Car_Project
             }
             else
             {
+                StartUpForm.startUpFormInstance.buttonRentCar.Visible = true;
+                StartUpForm.startUpFormInstance.buttonVehicles.Visible = true;
             }
         }
 
