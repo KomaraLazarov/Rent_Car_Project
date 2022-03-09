@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace Rent_Buy_Car_Project
 {
     public partial class LogInForm : Form
     {
+        private RentACarBusiness rentACarBusiness = new RentACarBusiness();
+
         public LogInForm()
         {
             InitializeComponent();
@@ -21,16 +24,20 @@ namespace Rent_Buy_Car_Project
         {
             // Check if username and passwords are valid
 
-            if (txtUsername.Text == "your_user_name" && txtPassword.Text == "your_password")
+            string username = this.txtUsername.Text;
+            string password = this.txtPassword.Text;
+
+            bool message = this.rentACarBusiness.LogIn(username, password);
+
+            if (message == false)
             {
-                MessageBox.Show("Successfully login");   
+                this.txtUsername.Text = "";
+                this.txtPassword.Text = "";
+
+                MessageBox.Show("Invalid username or password");
             }
             else
             {
-                MessageBox.Show("The username or password you entered is incorect, try again!");
-                txtUsername.Clear();
-                txtPassword.Clear();
-                txtUsername.Focus();
             }
         }
 

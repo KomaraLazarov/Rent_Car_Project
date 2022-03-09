@@ -46,7 +46,7 @@ namespace Rent_Buy_Car_Project
             this.btnOpenLoginPage_2.BackColor = Color.White;
             this.btnOpenSignInPage.BackColor = Color.FromArgb(225, 195, 4);
 
-            this.LoadForm(new SignInForm());
+            this.LoadForm(new SignUpForm());
         }
     }
 }
