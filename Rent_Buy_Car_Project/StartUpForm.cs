@@ -15,15 +15,20 @@ namespace Rent_Buy_Car_Project
         public static StartUpForm startUpFormInstance;
         public Button buttonRentCar;
         public Button buttonVehicles;
+        public Button buttonAbout;
+        public Panel paneldislpay;
         public StartUpForm()
         {
             InitializeComponent();
             this.LoadForm(new HomePageForm());
             this.btnOpenRentACarPage.Visible = false;
             this.btnOpenVehiclesPage.Visible = false;
+            this.btnOpenAboutPage.Visible = false;
             startUpFormInstance = this;
             buttonRentCar = btnOpenRentACarPage;
             buttonVehicles = btnOpenVehiclesPage;
+            buttonAbout = btnOpenAboutPage;
+            paneldislpay = panelDisplay;
         }
 
         private void LoadForm(object form)

@@ -38,9 +38,23 @@ namespace Rent_Buy_Car_Project
             {
                 StartUpForm.startUpFormInstance.buttonRentCar.Visible = true;
                 StartUpForm.startUpFormInstance.buttonVehicles.Visible = true;
+                StartUpForm.startUpFormInstance.buttonAbout.Visible = true;
+
+                this.LoadForm(new RentACarForm());
             }
         }
+        private void LoadForm(object form)
+        {
+            if (StartUpForm.startUpFormInstance.paneldislpay.Controls.Count > 0)
+                StartUpForm.startUpFormInstance.paneldislpay.Controls.RemoveAt(0);
 
+            Form f = form as Form;
+            f.TopLevel = false;
+            f.Dock = DockStyle.Fill;
+            StartUpForm.startUpFormInstance.paneldislpay.Controls.Add(f);
+            StartUpForm.startUpFormInstance.paneldislpay.Tag = f;
+            f.Show();
+        }
         private void buttonClearFields_Click(object sender, EventArgs e)
         {
             txtUsername.Clear();
