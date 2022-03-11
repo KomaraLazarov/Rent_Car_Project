@@ -54,6 +54,8 @@ namespace Rent_Buy_Car_Project
                 StartUpForm.startUpFormInstance.buttonAbout.Visible = true;
 
                 this.LoadForm(new RentACarForm());
+
+                StartUpForm.
             }
         }
         private void LoadForm(object form)

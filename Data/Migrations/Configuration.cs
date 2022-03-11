@@ -10,7 +10,6 @@
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "Data.RentACarContext";
         }
 
         protected override void Seed(Data.RentACarContext context)

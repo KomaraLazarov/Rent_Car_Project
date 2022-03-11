@@ -51,13 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202203091040019_InitialCreate.cs" />
-    <Compile Include="Migrations\202203091040019_InitialCreate.designer.cs">
-      <DependentUpon>202203091040019_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202203091548326_initial_users.cs" />
-    <Compile Include="Migrations\202203091548326_initial_users.designer.cs">
-      <DependentUpon>202203091548326_initial_users.cs</DependentUpon>
+    <Compile Include="Migrations\202203110944027_initialTableUsers.cs" />
+    <Compile Include="Migrations\202203110944027_initialTableUsers.designer.cs">
+      <DependentUpon>202203110944027_initialTableUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="RentACarContext.cs" />
@@ -69,11 +65,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203091040019_InitialCreate.resx">
-      <DependentUpon>202203091040019_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202203091548326_initial_users.resx">
-      <DependentUpon>202203091548326_initial_users.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203110944027_initialTableUsers.resx">
+      <DependentUpon>202203110944027_initialTableUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class initialTableUsers : DbMigration
     {
         public override void Up()
         {
@@ -19,7 +19,7 @@
                         LastName = c.String(),
                         Email = c.String(),
                         PhoneNumber = c.String(),
-                        Birthdate = c.DateTime(nullable: false),
+                        Birthdate = c.DateTime(nullable: false, storeType: "date"),
                     })
                 .PrimaryKey(t => t.Id);
             
