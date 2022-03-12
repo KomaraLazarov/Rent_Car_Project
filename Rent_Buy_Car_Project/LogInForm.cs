@@ -32,6 +32,9 @@ namespace Rent_Buy_Car_Project
                 StartUpForm.startUpFormInstance.buttonVehicles.Visible = true;
                 StartUpForm.startUpFormInstance.buttonAbout.Visible = true;
 
+                StartUpForm.startUpFormInstance.username = username;
+                StartUpForm.startUpFormInstance.password = password;
+
                 this.LoadForm(new RentACarForm());
             }
         }

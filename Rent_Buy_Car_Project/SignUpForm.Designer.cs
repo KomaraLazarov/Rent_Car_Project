@@ -80,7 +80,6 @@ namespace Rent_Buy_Car_Project
             this.lblFirstName.Size = new System.Drawing.Size(86, 17);
             this.lblFirstName.TabIndex = 4;
             this.lblFirstName.Text = "First name:";
-            this.lblFirstName.Click += new System.EventHandler(this.lblFirstName_Click);
             // 
             // lblMiddleName
             // 
@@ -297,7 +296,6 @@ namespace Rent_Buy_Car_Project
             this.label1.Size = new System.Drawing.Size(72, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "Username:";
-            this.label1.Click += new System.EventHandler(this.lblFirstName_Click);
             // 
             // panel8
             // 

@@ -1,13 +1,6 @@
-﻿using Business;
+﻿using System;
+using Business;
 using Data.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Rent_Buy_Car_Project
@@ -38,9 +31,9 @@ namespace Rent_Buy_Car_Project
 
             User user = new User(username, password, firstName, middleName, lastName, email, phone, birthDate);
 
-            bool message = this.rentACarBusiness.SignUp(user);
+            bool isSignedUp = this.rentACarBusiness.SignUp(user);
 
-            if (message == false)
+            if (isSignedUp == false)
             {
                 this.txtUsername.Text = "";
                 this.txtPassword.Text = "";
@@ -53,9 +46,10 @@ namespace Rent_Buy_Car_Project
                 StartUpForm.startUpFormInstance.buttonVehicles.Visible = true;
                 StartUpForm.startUpFormInstance.buttonAbout.Visible = true;
 
-                this.LoadForm(new RentACarForm());
+                StartUpForm.startUpFormInstance.username = username;
+                StartUpForm.startUpFormInstance.password = password;
 
-                StartUpForm.
+                this.LoadForm(new RentACarForm());
             }
         }
         private void LoadForm(object form)
@@ -69,10 +63,6 @@ namespace Rent_Buy_Car_Project
             StartUpForm.startUpFormInstance.paneldislpay.Controls.Add(f);
             StartUpForm.startUpFormInstance.paneldislpay.Tag = f;
             f.Show();
-        }
-        private void lblFirstName_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

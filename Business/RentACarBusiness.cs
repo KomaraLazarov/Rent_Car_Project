@@ -1,10 +1,8 @@
 ﻿using Data;
+using System.Linq;
 using Data.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Nest;
 
 namespace Business
 {
@@ -12,45 +10,108 @@ namespace Business
     {
         private RentACarContext rentACarContext;
 
+        public RentACarBusiness()
+        {
+            this.rentACarContext = new RentACarContext();
+        }
+
         public bool LogIn(string username, string password)
         {
-            using (rentACarContext = new RentACarContext())
-            {
-                if (this.rentACarContext.Users.Any(x => x.Username == username))
-                {
-                    User currUser = this.rentACarContext.Users.First(x => x.Username == username);
 
-                    if (currUser.Password == password)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
+            if (this.rentACarContext.User.Any(x => x.Username == username))
+            {
+                User currUser = this.rentACarContext.User.First(x => x.Username == username);
+
+                if (currUser.Password == password)
+                {
+                    return true;
                 }
                 else
                 {
                     return false;
                 }
+            }
+            else
+            {
+                return false;
             }
         }
         public bool SignUp(User user)
         {
-            using (this.rentACarContext = new RentACarContext())
-            {
-                if (this.rentACarContext.Users.Any(x => x.Username == user.Username))
-                {
-                    return false;
-                }
-                else
-                {
-                    this.rentACarContext.Users.Add(user);
-                    this.rentACarContext.SaveChanges();
 
-                    return true;
-                }
+            if (this.rentACarContext.User.Any(x => x.Username == user.Username))
+            {
+                return false;
             }
+            else
+            {
+                this.rentACarContext.User.Add(user);
+                this.rentACarContext.SaveChanges();
+
+                return true;
+            }
+        }
+        public decimal CalculateTotalPrice(DateTime hireDate, DateTime returnDate, string[] carProperties)
+        {
+
+            int totalDays = (returnDate - hireDate).Days;
+
+            int carId = this.GetCarId(carProperties);
+
+            decimal carPricePerDay = this.rentACarContext.Car.First(x => x.Id == carId).PricePerDay;
+
+            decimal totalPrice = totalDays * carPricePerDay;
+
+            return totalPrice;
+        }
+        public void MakeReservation(string username, string[] carProperties, DateTime hireDate, DateTime returnDate)
+        {
+            // user cannot hire more than one car before the return date of the previous
+
+
+            int carId = this.GetCarId(carProperties);
+            int userId = this.rentACarContext.User.First(x => x.Username.CompareTo(username) == 0).Id;
+
+
+            if (this.rentACarContext.Rental.Any(x => x.UserId == userId && (x.HireDate <= returnDate && x.ReturnDate <= hireDate)))
+            {
+                throw new ArgumentException("User already hire car in this period!");
+            }
+
+            if (this.rentACarContext.Rental.Any(x => x.CarId == carId && (x.HireDate < returnDate && x.ReturnDate < hireDate)))
+            {
+                throw new ArgumentException("Car already hire for this period!");
+            }
+
+
+            decimal price = this.CalculateTotalPrice(hireDate, returnDate, carProperties);
+            Rental rental = new Rental(userId, carId, hireDate, returnDate, 125.00m);
+            this.rentACarContext.Rental.Add(rental);
+            this.rentACarContext.SaveChanges();
+        }
+
+        private int GetCarId(string[] carProperties)
+        {
+            string mark = carProperties[0];
+            string model = carProperties[1];
+            int year = int.Parse(carProperties[2]);
+
+            int carId = this.rentACarContext.Car.First(x => x.Mark.CompareTo(mark) == 0 &&
+                        x.Model.CompareTo(model) == 0 &&
+                        x.Year.CompareTo(year) == 0).Id;
+
+            return carId;
+        }
+        private bool OverlappingPeriods(DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd)
+        {
+            if (aStart > aEnd)
+                throw new ArgumentException("A start can not be after its end.");
+
+            if (bStart > bEnd)
+                throw new ArgumentException("B start can not be after its end.");
+
+            return !((aEnd < bStart && aStart < bStart) ||
+                        (bEnd < aStart && bStart < aStart));
         }
     }
 }

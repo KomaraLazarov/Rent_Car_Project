@@ -51,11 +51,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\202203110944027_initialTableUsers.cs" />
-    <Compile Include="Migrations\202203110944027_initialTableUsers.designer.cs">
-      <DependentUpon>202203110944027_initialTableUsers.cs</DependentUpon>
+    <Compile Include="Migrations\202203120738543_UsersTable.cs" />
+    <Compile Include="Migrations\202203120738543_UsersTable.designer.cs">
+      <DependentUpon>202203120738543_UsersTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120851106_AddCarsAndRentalsAndUpdateUsers.cs" />
+    <Compile Include="Migrations\202203120851106_AddCarsAndRentalsAndUpdateUsers.designer.cs">
+      <DependentUpon>202203120851106_AddCarsAndRentalsAndUpdateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203120949029_fillCarsInfo.cs" />
+    <Compile Include="Migrations\202203120949029_fillCarsInfo.designer.cs">
+      <DependentUpon>202203120949029_fillCarsInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203121121514_ChangeTables.cs" />
+    <Compile Include="Migrations\202203121121514_ChangeTables.designer.cs">
+      <DependentUpon>202203121121514_ChangeTables.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Car.cs" />
+    <Compile Include="Models\Rental.cs" />
     <Compile Include="RentACarContext.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -65,8 +79,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202203110944027_initialTableUsers.resx">
-      <DependentUpon>202203110944027_initialTableUsers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202203120738543_UsersTable.resx">
+      <DependentUpon>202203120738543_UsersTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120851106_AddCarsAndRentalsAndUpdateUsers.resx">
+      <DependentUpon>202203120851106_AddCarsAndRentalsAndUpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203120949029_fillCarsInfo.resx">
+      <DependentUpon>202203120949029_fillCarsInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203121121514_ChangeTables.resx">
+      <DependentUpon>202203121121514_ChangeTables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

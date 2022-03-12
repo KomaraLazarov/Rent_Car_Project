@@ -31,16 +31,16 @@ namespace Rent_Buy_Car_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentACarForm));
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnCalculatePrice = new System.Windows.Forms.Button();
             this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
             this.btnMakeAReservation = new System.Windows.Forms.Button();
             this.dateTimePickerHireDate = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxChooseTypeCar = new System.Windows.Forms.ComboBox();
+            this.comboBoxChooseCar = new System.Windows.Forms.ComboBox();
             this.labelChooseCar = new System.Windows.Forms.Label();
             this.labelPickDate = new System.Windows.Forms.Label();
             this.labelPickLocation = new System.Windows.Forms.Label();
             this.btnRentACar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,11 +49,11 @@ namespace Rent_Buy_Car_Project
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.mainPanel.Controls.Add(this.label1);
-            this.mainPanel.Controls.Add(this.button1);
+            this.mainPanel.Controls.Add(this.btnCalculatePrice);
             this.mainPanel.Controls.Add(this.dateTimePickerReturnDate);
             this.mainPanel.Controls.Add(this.btnMakeAReservation);
             this.mainPanel.Controls.Add(this.dateTimePickerHireDate);
-            this.mainPanel.Controls.Add(this.comboBoxChooseTypeCar);
+            this.mainPanel.Controls.Add(this.comboBoxChooseCar);
             this.mainPanel.Controls.Add(this.labelChooseCar);
             this.mainPanel.Controls.Add(this.labelPickDate);
             this.mainPanel.Controls.Add(this.labelPickLocation);
@@ -63,6 +63,31 @@ namespace Rent_Buy_Car_Project
             this.mainPanel.Size = new System.Drawing.Size(460, 551);
             this.mainPanel.TabIndex = 8;
             this.mainPanel.Visible = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
+            this.label1.Location = new System.Drawing.Point(248, 385);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 23);
+            this.label1.TabIndex = 16;
+            // 
+            // btnCalculatePrice
+            // 
+            this.btnCalculatePrice.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(197)))), ((int)(((byte)(4)))));
+            this.btnCalculatePrice.FlatAppearance.BorderSize = 0;
+            this.btnCalculatePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCalculatePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCalculatePrice.Location = new System.Drawing.Point(43, 344);
+            this.btnCalculatePrice.Name = "btnCalculatePrice";
+            this.btnCalculatePrice.Size = new System.Drawing.Size(128, 92);
+            this.btnCalculatePrice.TabIndex = 15;
+            this.btnCalculatePrice.Text = "Calculate";
+            this.btnCalculatePrice.UseVisualStyleBackColor = false;
+            this.btnCalculatePrice.Click += new System.EventHandler(this.btnCalculatePrice_Click);
             // 
             // dateTimePickerReturnDate
             // 
@@ -98,16 +123,21 @@ namespace Rent_Buy_Car_Project
             this.dateTimePickerHireDate.Size = new System.Drawing.Size(362, 22);
             this.dateTimePickerHireDate.TabIndex = 12;
             // 
-            // comboBoxChooseTypeCar
+            // comboBoxChooseCar
             // 
-            this.comboBoxChooseTypeCar.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.comboBoxChooseTypeCar.FormattingEnabled = true;
-            this.comboBoxChooseTypeCar.Location = new System.Drawing.Point(43, 287);
-            this.comboBoxChooseTypeCar.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBoxChooseTypeCar.Name = "comboBoxChooseTypeCar";
-            this.comboBoxChooseTypeCar.Size = new System.Drawing.Size(364, 24);
-            this.comboBoxChooseTypeCar.TabIndex = 10;
-            this.comboBoxChooseTypeCar.Text = "-Select-";
+            this.comboBoxChooseCar.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.comboBoxChooseCar.FormattingEnabled = true;
+            this.comboBoxChooseCar.Items.AddRange(new object[] {
+            "Audi A7 2020",
+            "Audi Q7 2019",
+            "Audi A6 2020",
+            "Audi A5 2020",
+            "Audi Q3 2020"});
+            this.comboBoxChooseCar.Location = new System.Drawing.Point(43, 287);
+            this.comboBoxChooseCar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxChooseCar.Name = "comboBoxChooseCar";
+            this.comboBoxChooseCar.Size = new System.Drawing.Size(364, 24);
+            this.comboBoxChooseCar.TabIndex = 10;
             // 
             // labelChooseCar
             // 
@@ -164,30 +194,6 @@ namespace Rent_Buy_Car_Project
             this.btnRentACar.UseVisualStyleBackColor = false;
             this.btnRentACar.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(197)))), ((int)(((byte)(4)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.button1.Location = new System.Drawing.Point(43, 344);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(128, 92);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Calculate";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.label1.Location = new System.Drawing.Point(248, 385);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
-            this.label1.TabIndex = 16;
-            // 
             // RentACarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -212,13 +218,13 @@ namespace Rent_Buy_Car_Project
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Button btnRentACar;
         private System.Windows.Forms.DateTimePicker dateTimePickerHireDate;
-        private System.Windows.Forms.ComboBox comboBoxChooseTypeCar;
+        private System.Windows.Forms.ComboBox comboBoxChooseCar;
         private System.Windows.Forms.Label labelChooseCar;
         private System.Windows.Forms.Label labelPickDate;
         private System.Windows.Forms.Label labelPickLocation;
         private System.Windows.Forms.Button btnMakeAReservation;
         private System.Windows.Forms.DateTimePicker dateTimePickerReturnDate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCalculatePrice;
         private System.Windows.Forms.Label label1;
     }
 }
