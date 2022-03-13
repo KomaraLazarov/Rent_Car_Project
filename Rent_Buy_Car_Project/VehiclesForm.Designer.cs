@@ -344,7 +344,6 @@ namespace Rent_Buy_Car_Project
             this.label8.Size = new System.Drawing.Size(164, 23);
             this.label8.TabIndex = 2;
             this.label8.Text = "500BGN per day";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label10
             // 
@@ -410,7 +409,6 @@ namespace Rent_Buy_Car_Project
             this.label11.Size = new System.Drawing.Size(164, 23);
             this.label11.TabIndex = 2;
             this.label11.Text = "600BGN per day";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label13
             // 
@@ -464,7 +462,6 @@ namespace Rent_Buy_Car_Project
             this.label14.Size = new System.Drawing.Size(164, 23);
             this.label14.TabIndex = 2;
             this.label14.Text = "500BGN per day";
-            this.label14.Click += new System.EventHandler(this.label14_Click);
             // 
             // label16
             // 
@@ -518,7 +515,6 @@ namespace Rent_Buy_Car_Project
             this.label17.Size = new System.Drawing.Size(164, 23);
             this.label17.TabIndex = 2;
             this.label17.Text = "400BGN per day";
-            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // label19
             // 
@@ -572,7 +568,6 @@ namespace Rent_Buy_Car_Project
             this.label20.Size = new System.Drawing.Size(164, 23);
             this.label20.TabIndex = 2;
             this.label20.Text = "400BGN per day";
-            this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label22
             // 
@@ -631,7 +626,6 @@ namespace Rent_Buy_Car_Project
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "VehiclesForm";
             this.Text = "CarsFprRentPage";
-            this.Load += new System.EventHandler(this.VehiclesForm_Load);
             this.guna2PanelFilters.ResumeLayout(false);
             this.guna2PanelFilters.PerformLayout();
             this.panel1.ResumeLayout(false);

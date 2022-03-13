@@ -1,8 +1,7 @@
 ﻿using Data;
+using System;
 using System.Linq;
 using Data.Models;
-using System;
-using Nest;
 
 namespace Business
 {
@@ -66,26 +65,26 @@ namespace Business
         }
         public void MakeReservation(string username, string[] carProperties, DateTime hireDate, DateTime returnDate)
         {
-            // user cannot hire more than one car before the return date of the previous
-
-
             int carId = this.GetCarId(carProperties);
             int userId = this.rentACarContext.User.First(x => x.Username.CompareTo(username) == 0).Id;
 
-
-            if (this.rentACarContext.Rental.Any(x => x.UserId == userId && (x.HireDate <= returnDate && x.ReturnDate <= hireDate)))
+            if (this.rentACarContext.Rental.Any(x => x.UserId == userId &&
+                    ((x.HireDate <= hireDate && hireDate <= x.ReturnDate) ||
+                    (x.HireDate <= returnDate && returnDate <= x.ReturnDate))))
             {
                 throw new ArgumentException("User already hire car in this period!");
             }
 
-            if (this.rentACarContext.Rental.Any(x => x.CarId == carId && (x.HireDate < returnDate && x.ReturnDate < hireDate)))
+            if (this.rentACarContext.Rental.Any(x => x.CarId == carId && 
+                    ((x.HireDate <= hireDate && hireDate <= x.ReturnDate) ||
+                    (x.HireDate <= returnDate && returnDate <= x.ReturnDate))))
             {
                 throw new ArgumentException("Car already hire for this period!");
             }
 
-
             decimal price = this.CalculateTotalPrice(hireDate, returnDate, carProperties);
             Rental rental = new Rental(userId, carId, hireDate, returnDate, 125.00m);
+
             this.rentACarContext.Rental.Add(rental);
             this.rentACarContext.SaveChanges();
         }
@@ -101,17 +100,6 @@ namespace Business
                         x.Year.CompareTo(year) == 0).Id;
 
             return carId;
-        }
-        private bool OverlappingPeriods(DateTime aStart, DateTime aEnd, DateTime bStart, DateTime bEnd)
-        {
-            if (aStart > aEnd)
-                throw new ArgumentException("A start can not be after its end.");
-
-            if (bStart > bEnd)
-                throw new ArgumentException("B start can not be after its end.");
-
-            return !((aEnd < bStart && aStart < bStart) ||
-                        (bEnd < aStart && bStart < aStart));
         }
     }
 }

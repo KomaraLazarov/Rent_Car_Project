@@ -29,6 +29,7 @@ namespace Data.Models
         public DateTime ReturnDate { get; set; }
 
         [Required]
+        [Column("TotalPrice", Order = 6)]
         public decimal TotalPrice { get; set; }
     }
 }

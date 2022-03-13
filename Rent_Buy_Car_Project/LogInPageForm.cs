@@ -48,5 +48,10 @@ namespace Rent_Buy_Car_Project
 
             this.LoadForm(new SignUpForm());
         }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

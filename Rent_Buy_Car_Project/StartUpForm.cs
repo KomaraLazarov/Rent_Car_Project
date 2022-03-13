@@ -13,6 +13,7 @@ namespace Rent_Buy_Car_Project
         public Button buttonVehicles;
         public Button buttonAbout;
         public Panel paneldislpay;
+        public Label labelusername;
 
         public StartUpForm()
         {
@@ -25,10 +26,11 @@ namespace Rent_Buy_Car_Project
 
             startUpFormInstance = this;
 
-            buttonRentCar = btnOpenRentACarPage;
-            buttonVehicles = btnOpenVehiclesPage;
-            buttonAbout = btnOpenAboutPage;
-            paneldislpay = panelDisplay;
+            buttonRentCar = this.btnOpenRentACarPage;
+            buttonVehicles = this.btnOpenVehiclesPage;
+            buttonAbout = this.btnOpenAboutPage;
+            paneldislpay = this.panelDisplay;
+            labelusername = this.lblUsername;
         }
 
         private void LoadForm(object form)

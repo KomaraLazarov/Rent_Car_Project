@@ -1,11 +1,6 @@
-﻿using Business;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System;
+using Business;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Rent_Buy_Car_Project
@@ -51,7 +46,7 @@ namespace Rent_Buy_Car_Project
             else
             {
                 string[] carProperties = comboBoxChooseCar.SelectedItem.ToString().Split().ToArray();
-                this.label1.Text = this.rentACarBusiness.CalculateTotalPrice(hireDate, returnDate, carProperties).ToString();
+                this.lblTotalPrice.Text = this.rentACarBusiness.CalculateTotalPrice(hireDate, returnDate, carProperties).ToString();
             }
         }
     }

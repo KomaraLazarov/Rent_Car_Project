@@ -31,7 +31,7 @@ namespace Rent_Buy_Car_Project
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RentACarForm));
             this.mainPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalPrice = new System.Windows.Forms.Label();
             this.btnCalculatePrice = new System.Windows.Forms.Button();
             this.dateTimePickerReturnDate = new System.Windows.Forms.DateTimePicker();
             this.btnMakeAReservation = new System.Windows.Forms.Button();
@@ -48,7 +48,7 @@ namespace Rent_Buy_Car_Project
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Controls.Add(this.label1);
+            this.mainPanel.Controls.Add(this.lblTotalPrice);
             this.mainPanel.Controls.Add(this.btnCalculatePrice);
             this.mainPanel.Controls.Add(this.dateTimePickerReturnDate);
             this.mainPanel.Controls.Add(this.btnMakeAReservation);
@@ -64,16 +64,16 @@ namespace Rent_Buy_Car_Project
             this.mainPanel.TabIndex = 8;
             this.mainPanel.Visible = false;
             // 
-            // label1
+            // lblTotalPrice
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.label1.Location = new System.Drawing.Point(248, 385);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 23);
-            this.label1.TabIndex = 16;
+            this.lblTotalPrice.AutoSize = true;
+            this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
+            this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
+            this.lblTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
+            this.lblTotalPrice.Location = new System.Drawing.Point(248, 385);
+            this.lblTotalPrice.Name = "lblTotalPrice";
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 23);
+            this.lblTotalPrice.TabIndex = 16;
             // 
             // btnCalculatePrice
             // 
@@ -225,6 +225,6 @@ namespace Rent_Buy_Car_Project
         private System.Windows.Forms.Button btnMakeAReservation;
         private System.Windows.Forms.DateTimePicker dateTimePickerReturnDate;
         private System.Windows.Forms.Button btnCalculatePrice;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotalPrice;
     }
 }

@@ -86,6 +86,7 @@ namespace Rent_Buy_Car_Project
             this.mainPanel.Size = new System.Drawing.Size(460, 551);
             this.mainPanel.TabIndex = 7;
             this.mainPanel.Visible = false;
+            this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
             // LogInPageForm
             // 

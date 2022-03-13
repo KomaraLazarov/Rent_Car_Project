@@ -67,6 +67,14 @@
     <Compile Include="Migrations\202203121121514_ChangeTables.designer.cs">
       <DependentUpon>202203121121514_ChangeTables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202203122127265_updateRentals.cs" />
+    <Compile Include="Migrations\202203122127265_updateRentals.designer.cs">
+      <DependentUpon>202203122127265_updateRentals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202203122129517_changeRentalColumnsOrder.cs" />
+    <Compile Include="Migrations\202203122129517_changeRentalColumnsOrder.designer.cs">
+      <DependentUpon>202203122129517_changeRentalColumnsOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Car.cs" />
     <Compile Include="Models\Rental.cs" />
@@ -90,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202203121121514_ChangeTables.resx">
       <DependentUpon>202203121121514_ChangeTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203122127265_updateRentals.resx">
+      <DependentUpon>202203122127265_updateRentals.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202203122129517_changeRentalColumnsOrder.resx">
+      <DependentUpon>202203122129517_changeRentalColumnsOrder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

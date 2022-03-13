@@ -16,10 +16,6 @@ namespace Rent_Buy_Car_Project
 
         private void btnSignUp_Click(object sender, EventArgs e)
         {
-            // Check if there is already user with this email address
-            // Else add user to database
-            // Empty all the textboxes
-
             string username = this.txtUsername.Text;
             string firstName = this.txtFirstName.Text;
             string middleName = this.txtMiddleName.Text;
@@ -48,6 +44,7 @@ namespace Rent_Buy_Car_Project
 
                 StartUpForm.startUpFormInstance.username = username;
                 StartUpForm.startUpFormInstance.password = password;
+                StartUpForm.startUpFormInstance.labelusername.Text = username;
 
                 this.LoadForm(new RentACarForm());
             }
