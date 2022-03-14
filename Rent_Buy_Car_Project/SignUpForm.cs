@@ -44,7 +44,7 @@ namespace Rent_Buy_Car_Project
 
                 StartUpForm.startUpFormInstance.username = username;
                 StartUpForm.startUpFormInstance.password = password;
-                StartUpForm.startUpFormInstance.labelusername.Text = username;
+                StartUpForm.startUpFormInstance.labelUsername.Text = username;
 
                 this.LoadForm(new RentACarForm());
             }

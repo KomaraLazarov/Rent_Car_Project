@@ -32,6 +32,8 @@ namespace Rent_Buy_Car_Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartUpForm));
             this.btnCloseApp = new System.Windows.Forms.Button();
             this.navigationPanel = new System.Windows.Forms.Panel();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
             this.btnWhatsUp = new System.Windows.Forms.Button();
             this.btnTwitter = new System.Windows.Forms.Button();
             this.btnMail = new System.Windows.Forms.Button();
@@ -41,8 +43,6 @@ namespace Rent_Buy_Car_Project
             this.btnOpenRentACarPage = new System.Windows.Forms.Button();
             this.btnOpenHomePage = new System.Windows.Forms.Button();
             this.panelDisplay = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblUsername = new System.Windows.Forms.Label();
             this.navigationPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@ namespace Rent_Buy_Car_Project
             // 
             this.navigationPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(21)))), ((int)(((byte)(40)))), ((int)(((byte)(47)))));
             this.navigationPanel.Controls.Add(this.lblUsername);
-            this.navigationPanel.Controls.Add(this.label1);
+            this.navigationPanel.Controls.Add(this.labelName);
             this.navigationPanel.Controls.Add(this.btnCloseApp);
             this.navigationPanel.Controls.Add(this.btnWhatsUp);
             this.navigationPanel.Controls.Add(this.btnTwitter);
@@ -81,6 +81,27 @@ namespace Rent_Buy_Car_Project
             this.navigationPanel.Name = "navigationPanel";
             this.navigationPanel.Size = new System.Drawing.Size(1199, 67);
             this.navigationPanel.TabIndex = 1;
+            // 
+            // lblUsername
+            // 
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
+            this.lblUsername.Location = new System.Drawing.Point(460, 26);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(0, 15);
+            this.lblUsername.TabIndex = 3;
+            // 
+            // labelName
+            // 
+            this.labelName.AutoSize = true;
+            this.labelName.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelName.ForeColor = System.Drawing.Color.Transparent;
+            this.labelName.Location = new System.Drawing.Point(354, 26);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(70, 15);
+            this.labelName.TabIndex = 2;
+            this.labelName.Text = "Username:";
             // 
             // btnWhatsUp
             // 
@@ -208,30 +229,9 @@ namespace Rent_Buy_Car_Project
             this.panelDisplay.Size = new System.Drawing.Size(1199, 589);
             this.panelDisplay.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            this.label1.ForeColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(354, 26);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Username:";
-            // 
-            // lblUsername
-            // 
-            this.lblUsername.AutoSize = true;
-            this.lblUsername.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lblUsername.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.lblUsername.Location = new System.Drawing.Point(460, 26);
-            this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(0, 20);
-            this.lblUsername.TabIndex = 3;
-            // 
             // StartUpForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 656);
             this.Controls.Add(this.panelDisplay);
@@ -261,7 +261,7 @@ namespace Rent_Buy_Car_Project
         private System.Windows.Forms.Button btnOpenVehiclesPage;
         private System.Windows.Forms.Button btnOpenLoginPage;
         private System.Windows.Forms.Panel panelDisplay;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.Label lblUsername;
     }
 }
