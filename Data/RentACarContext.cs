@@ -1,9 +1,10 @@
-﻿using Data.Models;
+﻿using Data.Controls;
+using Data.Models;
 using System.Data.Entity;
 
 namespace Data
 {
-    public class RentACarContext : DbContext
+    public class RentACarContext : DbContext, IRentACarContext
     {
         public RentACarContext()
             : base("name=RentACarContext")

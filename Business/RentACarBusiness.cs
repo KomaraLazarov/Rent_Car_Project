@@ -2,10 +2,11 @@
 using System;
 using System.Linq;
 using Data.Models;
+using Business.Controls;
 
 namespace Business
 {
-    public class RentACarBusiness
+    public class RentACarBusiness : IRentACarBusiness
     {
         private RentACarContext rentACarContext;
 

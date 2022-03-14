@@ -1,10 +1,11 @@
 ﻿using System;
+using Data.Controls;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Models
 {
-    public class Rental
+    public class Rental : IRental
     {
         public Rental(int userId, int carId, DateTime hireDate, DateTime returnDate, decimal price)
         {

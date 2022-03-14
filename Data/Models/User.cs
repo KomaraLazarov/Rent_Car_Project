@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Data.Controls;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
@@ -6,7 +7,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Data.Models
 {
-    public class User
+    public class User : IUser
     {
         public User(string username, string password, string firstName, string middleName, string lastName, string email, string phoneNumber, DateTime birthDate)
             :this()

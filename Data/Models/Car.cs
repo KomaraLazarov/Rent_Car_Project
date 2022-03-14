@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Data.Controls;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Data.Models
 {
-    public class Car
+    public class Car : ICar
     {
         public Car()
         {
