@@ -7,6 +7,9 @@ namespace Data.Models
 {
     public class Car : ICar
     {
+        /// <summary>
+        /// Generate properties
+        /// </summary>
         public Car()
         {
             this.Rentals = new Collection<Rental>();

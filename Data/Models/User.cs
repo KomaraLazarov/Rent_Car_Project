@@ -9,6 +9,9 @@ namespace Data.Models
 {
     public class User : IUser
     {
+        /// <summary>
+        /// Generate properties
+        /// </summary>
         public User(string username, string password, string firstName, string middleName, string lastName, string email, string phoneNumber, DateTime birthDate)
             :this()
         {

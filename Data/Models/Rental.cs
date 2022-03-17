@@ -7,6 +7,9 @@ namespace Data.Models
 {
     public class Rental : IRental
     {
+        /// <summary>
+        /// Generate properties
+        /// </summary>
         public Rental(int userId, int carId, DateTime hireDate, DateTime returnDate, decimal price)
         {
             this.UserId = userId;
