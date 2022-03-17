@@ -17,6 +17,10 @@ namespace Business
         {
             this.rentACarContext = new RentACarContext();
         }
+        public RentACarBusiness(RentACarContext context)
+        {
+            this.rentACarContext = context;
+        }
 
         /// <summary>
         /// Check if user with username is in database and if so, log user and
@@ -31,9 +35,9 @@ namespace Business
         /// </returns>
         public bool LogIn(string username, string password)
         {
-            if (this.rentACarContext.User.Any(x => x.Username == username))
+            if (this.rentACarContext.Users.Any(x => x.Username == username))
             {
-                User currUser = this.rentACarContext.User.First(x => x.Username == username);
+                User currUser = this.rentACarContext.Users.First(x => x.Username == username);
 
                 if (currUser.Password == password)
                 {
@@ -60,13 +64,13 @@ namespace Business
         public bool SignUp(User user)
         {
 
-            if (this.rentACarContext.User.Any(x => x.Username == user.Username))
+            if (this.rentACarContext.Users.Any(x => x.Username == user.Username))
             {
                 return false;
             }
             else
             {
-                this.rentACarContext.User.Add(user);
+                this.rentACarContext.Users.Add(user);
                 this.rentACarContext.SaveChanges();
 
                 return true;
@@ -89,7 +93,7 @@ namespace Business
 
             int carId = this.GetCarId(carProperties);
 
-            decimal carPricePerDay = this.rentACarContext.Car.First(x => x.Id == carId).PricePerDay;
+            decimal carPricePerDay = this.rentACarContext.Cars.First(x => x.Id == carId).PricePerDay;
 
             decimal totalPrice = totalDays * carPricePerDay;
 
@@ -106,16 +110,16 @@ namespace Business
         public void MakeReservation(string username, string[] carProperties, DateTime hireDate, DateTime returnDate)
         {
             int carId = this.GetCarId(carProperties);
-            int userId = this.rentACarContext.User.First(x => x.Username.CompareTo(username) == 0).Id;
+            int userId = this.rentACarContext.Users.First(x => x.Username.CompareTo(username) == 0).Id;
 
-            if (this.rentACarContext.Rental.Any(x => x.UserId == userId &&
+            if (this.rentACarContext.Rentals.Any(x => x.UserId == userId &&
                     ((x.HireDate <= hireDate && hireDate <= x.ReturnDate) ||
                     (x.HireDate <= returnDate && returnDate <= x.ReturnDate))))
             {
                 throw new ArgumentException("User already hire car in this period!");
             }
 
-            if (this.rentACarContext.Rental.Any(x => x.CarId == carId && 
+            if (this.rentACarContext.Rentals.Any(x => x.CarId == carId && 
                     ((x.HireDate <= hireDate && hireDate <= x.ReturnDate) ||
                     (x.HireDate <= returnDate && returnDate <= x.ReturnDate))))
             {
@@ -125,7 +129,7 @@ namespace Business
             decimal price = this.CalculateTotalPrice(hireDate, returnDate, carProperties);
             Rental rental = new Rental(userId, carId, hireDate, returnDate, price);
 
-            this.rentACarContext.Rental.Add(rental);
+            this.rentACarContext.Rentals.Add(rental);
             this.rentACarContext.SaveChanges();
         }
         /// <summary>
@@ -139,7 +143,7 @@ namespace Business
             string model = carProperties[1];
             int year = int.Parse(carProperties[2]);
 
-            int carId = this.rentACarContext.Car.First(x => x.Mark.CompareTo(mark) == 0 &&
+            int carId = this.rentACarContext.Cars.First(x => x.Mark.CompareTo(mark) == 0 &&
                         x.Model.CompareTo(model) == 0 &&
                         x.Year.CompareTo(year) == 0).Id;
 

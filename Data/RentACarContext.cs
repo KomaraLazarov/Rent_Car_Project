@@ -1,4 +1,5 @@
-﻿using Data.Controls;
+﻿using Business.Controls;
+using Data.Controls;
 using Data.Models;
 using System.Data.Entity;
 
@@ -11,8 +12,8 @@ namespace Data
         {
         }
 
-        public DbSet<User> User { get; set; }
-        public DbSet<Car> Car { get; set; }
-        public DbSet<Rental> Rental { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<Car> Cars { get; set; }
+        public DbSet<Rental> Rentals { get; set; }
     }
 }
