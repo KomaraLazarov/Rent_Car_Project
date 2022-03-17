@@ -3,7 +3,6 @@ using Data.Models;
 using Moq;
 using NUnit.Framework;
 using System.Data.Entity;
-using Microsoft.EntityFrameworkCore;
 using Business;
 
 namespace RentACarProject.Tests

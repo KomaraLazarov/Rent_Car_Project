@@ -31,7 +31,6 @@ namespace Business
         /// </returns>
         public bool LogIn(string username, string password)
         {
-
             if (this.rentACarContext.User.Any(x => x.Username == username))
             {
                 User currUser = this.rentACarContext.User.First(x => x.Username == username);
@@ -124,7 +123,7 @@ namespace Business
             }
 
             decimal price = this.CalculateTotalPrice(hireDate, returnDate, carProperties);
-            Rental rental = new Rental(userId, carId, hireDate, returnDate, 125.00m);
+            Rental rental = new Rental(userId, carId, hireDate, returnDate, price);
 
             this.rentACarContext.Rental.Add(rental);
             this.rentACarContext.SaveChanges();
