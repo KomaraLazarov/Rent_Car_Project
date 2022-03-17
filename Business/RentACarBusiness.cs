@@ -11,7 +11,7 @@ namespace Business
         private RentACarContext rentACarContext;
 
         /// <summary>
-        /// Initialize a new Context to use it in the program.
+        /// Initialize a new Context to use it in the program for all the methods.
         /// </summary>
         public RentACarBusiness()
         {
@@ -20,14 +20,14 @@ namespace Business
 
         /// <summary>
         /// Check if user with username is in database and if so, log user and
-        /// allow rent a car. Otherwise, user cannot use any functionality
+        /// allow rent a car. Otherwise, user cannot use any functionality.
         /// </summary>
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns>
         /// Return true if user successfully logedIn,
         /// otherwise return false if password is incorrect or user doesn't
-        /// exist in the system
+        /// exist in the system.
         /// </returns>
         public bool LogIn(string username, string password)
         {
@@ -81,7 +81,7 @@ namespace Business
         /// <param name="returnDate"></param>
         /// <param name="carProperties"></param>
         /// <returns>
-        /// returns total price for the selected period
+        /// returns total price for the selected period.
         /// </returns>
         public decimal CalculateTotalPrice(DateTime hireDate, DateTime returnDate, string[] carProperties)
         {
@@ -133,7 +133,7 @@ namespace Business
         /// take car information properties and find it's id in the database system.
         /// </summary>
         /// <param name="carProperties"></param>
-        /// <returns>id of the user</returns>
+        /// <returns>id of the user.</returns>
         private int GetCarId(string[] carProperties)
         {
             string mark = carProperties[0];
