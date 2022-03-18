@@ -12,8 +12,8 @@ namespace Data
         {
         }
 
-        public DbSet<User> Users { get; set; }
-        public DbSet<Car> Cars { get; set; }
-        public DbSet<Rental> Rentals { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Car> Cars { get; set; }
+        public virtual DbSet<Rental> Rentals { get; set; }
     }
 }

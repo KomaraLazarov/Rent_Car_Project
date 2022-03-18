@@ -57,10 +57,9 @@ namespace Rent_Buy_Car_Project
             this.mainPanel.Controls.Add(this.labelChooseCar);
             this.mainPanel.Controls.Add(this.labelPickDate);
             this.mainPanel.Controls.Add(this.labelPickLocation);
-            this.mainPanel.Location = new System.Drawing.Point(208, 121);
-            this.mainPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.mainPanel.Location = new System.Drawing.Point(166, 97);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(460, 551);
+            this.mainPanel.Size = new System.Drawing.Size(368, 441);
             this.mainPanel.TabIndex = 8;
             this.mainPanel.Visible = false;
             // 
@@ -70,9 +69,10 @@ namespace Rent_Buy_Car_Project
             this.lblTotalPrice.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalPrice.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold);
             this.lblTotalPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.lblTotalPrice.Location = new System.Drawing.Point(248, 385);
+            this.lblTotalPrice.Location = new System.Drawing.Point(198, 308);
+            this.lblTotalPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTotalPrice.Name = "lblTotalPrice";
-            this.lblTotalPrice.Size = new System.Drawing.Size(0, 23);
+            this.lblTotalPrice.Size = new System.Drawing.Size(0, 19);
             this.lblTotalPrice.TabIndex = 16;
             // 
             // btnCalculatePrice
@@ -81,9 +81,10 @@ namespace Rent_Buy_Car_Project
             this.btnCalculatePrice.FlatAppearance.BorderSize = 0;
             this.btnCalculatePrice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCalculatePrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCalculatePrice.Location = new System.Drawing.Point(43, 344);
+            this.btnCalculatePrice.Location = new System.Drawing.Point(34, 275);
+            this.btnCalculatePrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCalculatePrice.Name = "btnCalculatePrice";
-            this.btnCalculatePrice.Size = new System.Drawing.Size(128, 92);
+            this.btnCalculatePrice.Size = new System.Drawing.Size(102, 74);
             this.btnCalculatePrice.TabIndex = 15;
             this.btnCalculatePrice.Text = "Calculate";
             this.btnCalculatePrice.UseVisualStyleBackColor = false;
@@ -92,9 +93,10 @@ namespace Rent_Buy_Car_Project
             // dateTimePickerReturnDate
             // 
             this.dateTimePickerReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(43, 175);
+            this.dateTimePickerReturnDate.Location = new System.Drawing.Point(34, 140);
+            this.dateTimePickerReturnDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dateTimePickerReturnDate.Name = "dateTimePickerReturnDate";
-            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(362, 22);
+            this.dateTimePickerReturnDate.Size = new System.Drawing.Size(290, 20);
             this.dateTimePickerReturnDate.TabIndex = 14;
             // 
             // btnMakeAReservation
@@ -104,10 +106,9 @@ namespace Rent_Buy_Car_Project
             this.btnMakeAReservation.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMakeAReservation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.btnMakeAReservation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnMakeAReservation.Location = new System.Drawing.Point(45, 466);
-            this.btnMakeAReservation.Margin = new System.Windows.Forms.Padding(4);
+            this.btnMakeAReservation.Location = new System.Drawing.Point(36, 373);
             this.btnMakeAReservation.Name = "btnMakeAReservation";
-            this.btnMakeAReservation.Size = new System.Drawing.Size(362, 69);
+            this.btnMakeAReservation.Size = new System.Drawing.Size(290, 55);
             this.btnMakeAReservation.TabIndex = 13;
             this.btnMakeAReservation.Text = "Make a Reservation";
             this.btnMakeAReservation.UseVisualStyleBackColor = false;
@@ -117,10 +118,9 @@ namespace Rent_Buy_Car_Project
             // 
             this.dateTimePickerHireDate.CalendarForeColor = System.Drawing.SystemColors.WindowText;
             this.dateTimePickerHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerHireDate.Location = new System.Drawing.Point(43, 82);
-            this.dateTimePickerHireDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dateTimePickerHireDate.Location = new System.Drawing.Point(34, 66);
             this.dateTimePickerHireDate.Name = "dateTimePickerHireDate";
-            this.dateTimePickerHireDate.Size = new System.Drawing.Size(362, 22);
+            this.dateTimePickerHireDate.Size = new System.Drawing.Size(290, 20);
             this.dateTimePickerHireDate.TabIndex = 12;
             // 
             // comboBoxChooseCar
@@ -133,10 +133,9 @@ namespace Rent_Buy_Car_Project
             "Audi A6 2020",
             "Audi A5 2020",
             "Audi Q3 2020"});
-            this.comboBoxChooseCar.Location = new System.Drawing.Point(43, 287);
-            this.comboBoxChooseCar.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBoxChooseCar.Location = new System.Drawing.Point(34, 230);
             this.comboBoxChooseCar.Name = "comboBoxChooseCar";
-            this.comboBoxChooseCar.Size = new System.Drawing.Size(364, 24);
+            this.comboBoxChooseCar.Size = new System.Drawing.Size(292, 21);
             this.comboBoxChooseCar.TabIndex = 10;
             // 
             // labelChooseCar
@@ -144,10 +143,9 @@ namespace Rent_Buy_Car_Project
             this.labelChooseCar.AutoSize = true;
             this.labelChooseCar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelChooseCar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.labelChooseCar.Location = new System.Drawing.Point(39, 247);
-            this.labelChooseCar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelChooseCar.Location = new System.Drawing.Point(31, 198);
             this.labelChooseCar.Name = "labelChooseCar";
-            this.labelChooseCar.Size = new System.Drawing.Size(179, 23);
+            this.labelChooseCar.Size = new System.Drawing.Size(140, 19);
             this.labelChooseCar.TabIndex = 7;
             this.labelChooseCar.Text = "Choose Car Type";
             // 
@@ -156,10 +154,9 @@ namespace Rent_Buy_Car_Project
             this.labelPickDate.AutoSize = true;
             this.labelPickDate.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPickDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.labelPickDate.Location = new System.Drawing.Point(39, 137);
-            this.labelPickDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPickDate.Location = new System.Drawing.Point(31, 110);
             this.labelPickDate.Name = "labelPickDate";
-            this.labelPickDate.Size = new System.Drawing.Size(229, 23);
+            this.labelPickDate.Size = new System.Drawing.Size(179, 19);
             this.labelPickDate.TabIndex = 8;
             this.labelPickDate.Text = "Pick-Up Date to Return";
             // 
@@ -168,10 +165,9 @@ namespace Rent_Buy_Car_Project
             this.labelPickLocation.AutoSize = true;
             this.labelPickLocation.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelPickLocation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(195)))), ((int)(((byte)(4)))));
-            this.labelPickLocation.Location = new System.Drawing.Point(39, 41);
-            this.labelPickLocation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.labelPickLocation.Location = new System.Drawing.Point(31, 33);
             this.labelPickLocation.Name = "labelPickLocation";
-            this.labelPickLocation.Size = new System.Drawing.Size(206, 23);
+            this.labelPickLocation.Size = new System.Drawing.Size(161, 19);
             this.labelPickLocation.TabIndex = 9;
             this.labelPickLocation.Text = "Pick-Up Date to Hire";
             // 
@@ -185,10 +181,9 @@ namespace Rent_Buy_Car_Project
             this.btnRentACar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRentACar.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnRentACar.ForeColor = System.Drawing.Color.Black;
-            this.btnRentACar.Location = new System.Drawing.Point(208, 71);
-            this.btnRentACar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRentACar.Location = new System.Drawing.Point(166, 57);
             this.btnRentACar.Name = "btnRentACar";
-            this.btnRentACar.Size = new System.Drawing.Size(460, 50);
+            this.btnRentACar.Size = new System.Drawing.Size(368, 40);
             this.btnRentACar.TabIndex = 5;
             this.btnRentACar.Text = "Rent a Car";
             this.btnRentACar.UseVisualStyleBackColor = false;
@@ -196,15 +191,14 @@ namespace Rent_Buy_Car_Project
             // 
             // RentACarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1479, 688);
+            this.ClientSize = new System.Drawing.Size(1109, 550);
             this.Controls.Add(this.btnRentACar);
             this.Controls.Add(this.mainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "RentACarForm";
             this.Text = "RentACarForm";
             this.mainPanel.ResumeLayout(false);

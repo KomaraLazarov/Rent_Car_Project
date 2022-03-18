@@ -7,10 +7,12 @@ using Business;
 using Data.Controls;
 using Business.Controls;
 using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace RentACarProject.Tests
 {
-    public class Tests
+    public class SignUpTests
     {
         private const string fakeUsername = "KostadinBundov";
         private const string fakePassword = "kok123";
@@ -21,29 +23,34 @@ namespace RentACarProject.Tests
         private const string fakePhoneNumber = "0886008605";
         private DateTime fakeDateTime = new DateTime(12 / 25 / 2008);
 
-        private Mock<RentACarContext> fakeContext;
-
         [SetUp]
         public void Setup()
         {
-            this.fakeContext = new Mock<RentACarContext>();
+
         }
 
         [Test]
-        public void AddUserIntoDatabase()
+        public void AddUserIntoDatabaseAfterSignUp()
         {
-            var mockSetCar = new Mock<DbSet<User>>();
+            var data = new List<User>
+            {
+
+            }.AsQueryable();
+
+            var mockSet = new Mock<DbSet<User>>();
+            mockSet.As<IQueryable<User>>().Setup(m => m.Provider).Returns(data.Provider);
+            mockSet.As<IQueryable<User>>().Setup(m => m.Expression).Returns(data.Expression);
+            mockSet.As<IQueryable<User>>().Setup(m => m.ElementType).Returns(data.ElementType);
+            mockSet.As<IQueryable<User>>().Setup(m => m.GetEnumerator()).Returns(data.GetEnumerator());
 
             var mockContext = new Mock<RentACarContext>();
+            mockContext.Setup(m => m.Users).Returns(mockSet.Object);
 
-            mockContext.Setup(m => m.Users).Returns(mockSetCar.Object);
-
-            var fakeBusiness = new RentACarBusiness(mockContext.Object);
-
-            fakeBusiness.SignUp(new User(fakeUsername, fakePassword, fakeFirstName, fakeSecondName, 
+            var service = new RentACarBusiness(mockContext.Object);
+            service.SignUp(new User(fakeUsername, fakePassword, fakeFirstName, fakeSecondName,
                 fakeLastName, fakeEmail, fakePhoneNumber, fakeDateTime));
 
-            mockSetCar.Verify(m => m.Add(It.IsAny<User>()), Times.Once());
+            mockSet.Verify(m => m.Add(It.IsAny<User>()), Times.Once());
             mockContext.Verify(m => m.SaveChanges(), Times.Once());
         }
     }

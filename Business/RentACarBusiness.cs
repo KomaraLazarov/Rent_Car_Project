@@ -86,7 +86,7 @@ namespace Business
         /// <returns>
         /// returns total price for the selected period.
         /// </returns>
-        public decimal CalculateTotalPrice(DateTime hireDate, DateTime returnDate, string[] carProperties)
+        public virtual decimal CalculateTotalPrice(DateTime hireDate, DateTime returnDate, string[] carProperties)
         {
 
             int totalDays = (returnDate - hireDate).Days;
@@ -137,7 +137,7 @@ namespace Business
         /// </summary>
         /// <param name="carProperties"></param>
         /// <returns>id of the user.</returns>
-        private int GetCarId(string[] carProperties)
+        public virtual int GetCarId(string[] carProperties)
         {
             string mark = carProperties[0];
             string model = carProperties[1];
