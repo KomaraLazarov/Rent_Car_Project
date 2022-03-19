@@ -1,8 +1,12 @@
-﻿using Data.Controls;
+﻿using Business;
+using Data;
+using Data.Controls;
+using Data.Models;
 using Moq;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +25,15 @@ namespace RentACarProject.Tests
         }
 
         [Test]
-        public void UserWithValidPasswordShouldLogIn()
+        public void UserWithValidPasswordAndUsernameIsLoggedInTheSystem()
         {
-            Mock<IUser> fakeUser = new Mock<IUser>();
-            fakeUser.Setup(u => u.Username).Returns(fakeUsername);
-            fakeUser.Setup(u => u.Password).Returns(fakePassword);
-            Assert.AreEqual("4oekaLe6*", fakeUser.Object.Password, "Password is invalid!");
+            var service = new Mock<RentACarBusiness>();
+            service.Setup(m => m.LogIn(fakeUsername, fakePassword)).Returns(true);
+
+            bool isLogged = service.Object.LogIn(fakeUsername, fakePassword);
+
+            Assert.AreEqual(true, isLogged, "User is not logged in the system!");
         }
+
     }
 }

@@ -54,27 +54,27 @@ namespace RentACarProject.Tests
 
             mockSet.Verify(m => m.Add(It.IsAny<Rental>()), Times.Once());
         }
-
+        
         [Test]
         public void GetCarIdCorrectly()
         {       
             var service = new Mock<RentACarBusiness>();
-            service.Setup(m => m.GetCarId(fakeProperties)).Returns(1);
+            service.Setup(m => m.GetCarId(fakeProperties)).Returns(fakeCarId);
 
             int carId = service.Object.GetCarId(fakeProperties);
 
-            Assert.AreEqual(1, carId, "Not taken properly CarId!");
+            Assert.AreEqual(fakeCarId, carId, "Not taken properly CarId!");
         }
 
         [Test]
         public void CalculateTotalPriceAfterClickTheButton()
         {
             var service = new Mock<RentACarBusiness>();
-            service.Setup(m => m.CalculateTotalPrice(fakeHireDate, fakeReturnDate, fakeProperties)).Returns(1);
+            service.Setup(m => m.CalculateTotalPrice(fakeHireDate, fakeReturnDate, fakeProperties)).Returns(fakePrice);
 
             decimal price = service.Object.CalculateTotalPrice(fakeHireDate, fakeReturnDate, fakeProperties);
 
-            Assert.AreEqual(1, price, "Not calculate properly the total price!");
+            Assert.AreEqual(fakePrice, price, "Not calculate properly the total price!");
         }
     }
 }

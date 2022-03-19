@@ -41,7 +41,7 @@ namespace Business
         /// otherwise return false if password is incorrect or user doesn't
         /// exist in the system.
         /// </returns>
-        public bool LogIn(string username, string password)
+        public virtual bool LogIn(string username, string password)
         {
             if (this.rentACarContext.Users.Any(x => x.Username == username))
             {
@@ -115,7 +115,7 @@ namespace Business
         /// <param name="carProperties"></param>
         /// <param name="hireDate"></param>
         /// <param name="returnDate"></param>
-        public void MakeReservation(string username, string[] carProperties, DateTime hireDate, DateTime returnDate)
+        public virtual void MakeReservation(string username, string[] carProperties, DateTime hireDate, DateTime returnDate)
         {
             int carId = this.GetCarId(carProperties);
             int userId = this.rentACarContext.Users.First(x => x.Username.CompareTo(username) == 0).Id;
