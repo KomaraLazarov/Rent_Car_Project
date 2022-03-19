@@ -25,6 +25,9 @@ namespace Business
         {
             this.rentACarContext = new RentACarContext();
         }
+        /// <summary>
+        /// Initialize a new Context to use it in the program for all the methods.
+        /// </summary>
         public RentACarBusiness(RentACarContext context)
         {
             this.rentACarContext = context;
