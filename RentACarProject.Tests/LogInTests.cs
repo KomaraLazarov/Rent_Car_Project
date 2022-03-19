@@ -1,15 +1,6 @@
-﻿using Business;
-using Data;
-using Data.Controls;
-using Data.Models;
-using Moq;
+﻿using Moq;
+using Business;
 using NUnit.Framework;
-using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentACarProject.Tests
 {
