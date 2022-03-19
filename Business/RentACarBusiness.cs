@@ -6,6 +6,14 @@ using Business.Controls;
 
 namespace Business
 {
+    /// <summary>
+    /// <PropertyGroup>
+    /// <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    /// </PropertyGroup>
+    /// <GenerateDocumentationFile>
+    /// true
+    /// </GenerateDocumentationFile>
+    /// </summary>
     public class RentACarBusiness : IRentACarBusiness
     {
         private RentACarContext rentACarContext;
